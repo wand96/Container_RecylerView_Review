@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Container_RecyclerView_Review">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
+<!--            exporeted는 다른 애플리케이션 구성요소로 Activity를 시작할 수 있는지를 설정
+                다른 앱에서 Activity를 시작할 수 있으면 true, 없으면 false로 설정
+                intent필터를 사용할 때는 false로 설정하면 안됨-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
