@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.container_recyclerview_review.databinding.ItemRecyclerBinding
 import java.text.SimpleDateFormat
 
+//리사이클러뷰어댑터는 뷰홀더 클래스를 제네릭으로 지정해야 하기 때문에 뷰홀더를 먼저 만드는 것이 편하다.
+//어댑터가 정상작동하기 위해서는 아래 3개의 인터페이스를 반드시 구현해야 한다.
 class CustomAdapter: RecyclerView.Adapter<Holder>() {
 
     var listData = mutableListOf<Memo>()
@@ -29,7 +31,7 @@ class CustomAdapter: RecyclerView.Adapter<Holder>() {
 }
 
 class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
-//itemView를 ViewHolder의 생성자에 전달합니다.
+
     fun setMemo(memo: Memo) {
     //화면에 데이터를 세팅하는 메서드
         binding.textNo.text = "${memo.no}"
