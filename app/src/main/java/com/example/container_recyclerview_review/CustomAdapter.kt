@@ -2,6 +2,7 @@ package com.example.container_recyclerview_review
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.container_recyclerview_review.databinding.ItemRecyclerBinding
 import java.text.SimpleDateFormat
@@ -32,6 +33,13 @@ class CustomAdapter: RecyclerView.Adapter<Holder>() {
 
 class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
 
+    init {
+        binding.root.setOnClickListener {
+            Toast.makeText(binding.root.context, "클릭된 아이템 = ${binding.textTitle.text}", Toast.LENGTH_LONG).show()
+            //context는 binding.root에서 꺼낼 수 있음
+        }
+    }//목록 클릭 이벤트 처리: Holder클래스가 생성되는 시점에 클릭리스너를 추가
+    
     fun setMemo(memo: Memo) {
     //화면에 데이터를 세팅하는 메서드
         binding.textNo.text = "${memo.no}"
